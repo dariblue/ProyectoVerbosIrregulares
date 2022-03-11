@@ -20,22 +20,41 @@
 <body>
 
 
-    <button type="button" class="btn btn-info" onclick="myFunction()">Info</button>
+    <!-- <button type="button" class="btn btn-info" onclick="randomIntFromInterval() + myFunction()">Info</button> -->
 
+
+    <div class="col-3">
+        <!-- Este es un concenedor vacio para que se quede centrado el texto con una separacion
+        de los laterales -->
+    </div>
+
+    <div class="row">
+        <button id="Verbo1" type="button" class="btn btn-outline-info">ESPAÑOLCITO</button>
+    </div>
+    <div class="col-8">
+        <button id="Verbo1" type="button" class="btn btn-outline-info">Verbo1</button>
+        <button id="Verbo2" type="button" class="btn btn-outline-info">Verbo2</button>
+        <button id="Verbo3" type="button" class="btn btn-outline-info">Verbo3</button>
+    </div>
+
+    <div class="col-3">
+        <!-- Este es un concenedor vacio para que se quede centrado el texto con una separacion
+        de los laterales -->
+    </div>
     <div id="botones"></div>
     <script>
 
-        function getRandomArbitrary(0, 30) {
-            return Math.random() * (0 - 30) + 0;
+        function randomIntFromInterval(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
         }
+        const VerboAleatorio = randomIntFromInterval(1,140)
 
 
         function myFunction() {
             console.log("ok");
         }
-
-        console.log(verbos[7][2]);
-        $('#botones').append('<button type="button" class="btn btn-primary">' + verbos[7][2] + '</button>');
+        //$('#botones').append('<button type="button" class="btn btn-primary">' + verbos[7][2] + '</button>');
+        // console.log ("El verbo elegido es " + VerboAleatorio);
     </script>
 </body>
 
