@@ -19,61 +19,193 @@
 
 <body>
 
-
-    <!-- <button type="button" class="btn btn-info" onclick="randomIntFromInterval() + myFunction()">Info</button> -->
-
-
-
-    <div class="container">
-        <div class="row">
-            <button id="Español" type="button" class="btn btn-outline-info" disabled>ESPAÑOLCITO</button>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand" href="#">
+                <img src="https://images.emojiterra.com/twitter/512px/1f1fa-1f1f8.png" width="30" height="30"
+                    class="d-inline-block align-text-top">
+                &nbsp; Verbos Irregulares &nbsp;
+                <img src="https://images.emojiterra.com/twitter/512px/1f1ec-1f1e7.png" width="30" height="30"
+                    class="d-inline-block align-text-top">
+            </a>
         </div>
+    </nav>
+
+    <div id="EligeNivel">
 
         <div class="row">
-            <div class="col">
-                <button id="Verbo1" type="button" class="btn btn-outline-info" disabled>Verbo1</button>
+            <div class="col-2">
+                <!-- contenedor vacio -->
             </div>
 
-            <div class="col">
-                <button id="Verbo2" type="button" class="btn btn-outline-info" disabled>Verbo2</button>
-            </div>
+            <div class="col-8">
+                <div class="alert alert-info" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-exclamation-octagon" viewBox="0 0 16 16">
+                        <path
+                            d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z" />
+                        <path
+                            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                    </svg>
+                    Selecciona un nivel para jugar
+                </div>
 
-            <div class="col">
-                <button id="Verbo3" type="button" class="btn btn-outline-info" disabled>Verbo3</button>
-            </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-patch-question-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M5.933.87a2.89 2.89 0 0 1 4.134 0l.622.638.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636zM7.002 11a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm1.602-2.027c.04-.534.198-.815.846-1.26.674-.475 1.05-1.09 1.05-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745.336 0 .504-.24.554-.627z" />
+                    </svg>
+                </button>
 
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Utiliza los botones para poder escojer un nivel de dificultad!
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Botones de niveles -->
+                <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" onclick="cargaNivel('10') " class="btn btn-success"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-reception-2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4 5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm4 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                        </svg> &nbsp; 10</button>
+                    <button type="button" onclick="cargaNivel('20') " class="btn btn-success">20</button>
+                    <button type="button" onclick="cargaNivel('30') " class="btn btn-success">30</button>
+                </div>
+                <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" onclick="cargaNivel('40') " class="btn btn-warning"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-reception-3" viewBox="0 0 16 16">
+                            <path
+                                d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                        </svg> &nbsp; 40</button>
+                    <button type="button" onclick="cargaNivel('50') " class="btn btn-warning">50</button>
+                    <button type="button" onclick="cargaNivel('60') " class="btn btn-warning">60</button>
+                </div>
+                <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" onclick="cargaNivel('70') " class="btn btn-danger "><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-reception-4" viewBox="0 0 16 16">
+                            <path
+                                d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z" />
+                        </svg> &nbsp; 70</button>
+                    <button type="button" onclick="cargaNivel('80') " class="btn btn-danger ">&nbsp; 80</button>
+                    <button type="button" onclick="cargaNivel('140')" class="btn btn-danger">140</button>
+                </div>
+
+
+                <div class="col-2">
+                    <!-- contenedor vacio -->
+                </div>
+
+                <div>
+
+                </div>
+
+            </div>
         </div>
+    </div>
 
 
-
+    <div id="In-Game">
+        <!-- Botones In-Game -->
+        <div class="container">
+            <div class="row">
+                <button id="Español" type="button" class="btn btn-info" disabled>ESPAÑOLCITO</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button id="Verbo1" type="button" class="btn btn-info col-8" disabled>Verbo1</button>
+                </div>
+                <div class="col">
+                    <button id="Verbo2" type="button" class="btn btn-info col-8" disabled>Verbo2</button>
+                </div>
+                <div class="col">
+                    <button id="Verbo3" type="button" class="btn btn-info col-8" disabled>Verbo3</button>
+                </div>
+                <!-- <button onclick="alertCookie()">Mostrar cookies</button>
+                <button onclick="MuestraNivel()">Muestra el nivel</button> -->
+            </div>
+        </div>
     </div>
 
 
 
+    <!-- Script Zone -->
+    <script src="Recursos/js/jquery-3.6.0.min.js"></script>
 
-    <!-- JS ZONE -->
     <script>
 
-        function ElegirVerbo() {
-            var VerboAleatorio = Math.floor(Math.random() * verbos.length);
-            document.getElementById("Español").innerHTML = verbos[VerboAleatorio][3];
-            document.getElementById("Verbo1").innerHTML = verbos[VerboAleatorio][0];
-            document.getElementById("Verbo2").innerHTML = verbos[VerboAleatorio][1];
-            document.getElementById("Verbo3").innerHTML = verbos[VerboAleatorio][2];
+        $.when($.ready).then(function () {
+            $("In-Game").hide();
+        });
+
+        $(document).ready(function () {
+            $("In-Game").hide();
+        });
+
+
+        function cargaNivel(_nivel) {
+            // $('#EligeNivel').hide('#EligeNivel', { nivel: _nivel });
+            // $('#partida').load('In-Game.html', { nivel: _nivel });
+
+            $("#EligeNivel").click(function () {
+                $("#EligeNivel").fadeOut("slow", function () {
+                    // Animation complete.
+                });
+                $("#In-Game").show("slow", function () {
+                    // Animation complete.
+                });
+            });
+
+            // $("#EligeNivel").click(function () {
+            //     $("#In-Game").show("slow", function () {
+            //         // Animation complete.
+            //     });
+            // });
+
         }
-
-        ElegirVerbo();
-
-
-        // function randomIntFromInterval(min, max) {
-        //     return Math.floor(Math.random() * (max - min + 1) + min);
-        // }
-        // const VerboAleatorio = randomIntFromInterval(1, 140)
-
-        //$('#botones').append('<button type="button" class="btn btn-primary">' + verbos[7][2] + '</button>');
-        // console.log ("El verbo elegido es " + VerboAleatorio);
     </script>
+
+
+
+
 </body>
 
 
 </html>
+
+
+
+
+<!-- Prubas tontas -->
+
+
+
+<!-- function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+const VerboAleatorio = randomIntFromInterval(1, 140)
+
+$('#botones').append('<button type="button" class="btn btn-primary">' + verbos[7][2] + '</button>');
+console.log ("El verbo elegido es " + VerboAleatorio); -->
+
+
+<!-- <button type="button" class="btn btn-info" onclick="randomIntFromInterval() + myFunction()">Info</button> -->
