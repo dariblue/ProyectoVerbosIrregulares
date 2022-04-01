@@ -124,7 +124,7 @@
     </div>
 
 
-    <div id="In-Game">
+    <div id="InGame">
         <!-- Botones In-Game -->
         <div class="container">
             <div class="row">
@@ -152,13 +152,8 @@
     <script src="Recursos/js/jquery-3.6.0.min.js"></script>
 
     <script>
-
-        $.when($.ready).then(function () {
-            $("In-Game").hide();
-        });
-
         $(document).ready(function () {
-            $("In-Game").hide();
+            $("#InGame").hide();
         });
 
 
@@ -167,21 +162,44 @@
             // $('#partida').load('In-Game.html', { nivel: _nivel });
 
             $("#EligeNivel").click(function () {
-                $("#EligeNivel").fadeOut("slow", function () {
-                    // Animation complete.
-                });
-                $("#In-Game").show("slow", function () {
-                    // Animation complete.
+                $("#EligeNivel").fadeOut("slow", function () {}).queue("hola");
+                // $("#InGame").fadein("slow");
+                $("#InGame").fadeIn("slow", function () {
+                    // Animation complete
                 });
             });
-
-            // $("#EligeNivel").click(function () {
-            //     $("#In-Game").show("slow", function () {
-            //         // Animation complete.
-            //     });
-            // });
-
         }
+
+        function ElegirVerbo() {
+            var VerboAleatorio = Math.floor(Math.random() * verbos.length);
+            var VerboEscondido = Math.floor(Math.random() * 3);
+            console.log (VerboEscondido);
+
+
+            document.getElementById("Español").innerHTML = verbos[VerboAleatorio][3];
+
+            if (VerboEscondido == 0){
+                document.getElementById("Verbo1").innerHTML = '<input id="caja" class="form-control">';
+                document.getElementById("Verbo2").innerHTML = verbos[VerboAleatorio][1];
+                document.getElementById("Verbo3").innerHTML = verbos[VerboAleatorio][2];
+            }
+            else if (VerboEscondido == 1){
+                document.getElementById("Verbo1").innerHTML = verbos[VerboAleatorio][0];
+                document.getElementById("Verbo2").innerHTML = '<input id="caja" class="form-control">';
+                document.getElementById("Verbo3").innerHTML = verbos[VerboAleatorio][2];
+            }
+            else if (VerboEscondido == 2) {
+                document.getElementById("Verbo1").innerHTML = verbos[VerboAleatorio][0];
+                document.getElementById("Verbo2").innerHTML = verbos[VerboAleatorio][1];
+                document.getElementById("Verbo3").innerHTML = '<input id="caja" class="form-control">';
+            }
+            else{
+                document.getElementById("Verbo1").innerHTML = verbos[VerboAleatorio][0];
+                document.getElementById("Verbo2").innerHTML = verbos[VerboAleatorio][1];
+                document.getElementById("Verbo3").innerHTML = verbos[VerboAleatorio][2];
+            }
+        }
+        ElegirVerbo();
     </script>
 
 
